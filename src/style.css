@@ -68,13 +68,13 @@ button {
   border: 2px solid #DA6E67;
   position: relative;
 }
-sidebarMerged{
+.sidebarMerged{
   background: #FDDF9B;
 }
-.visble-buttons{
+.visble-buttons > button{
   visibility: visible;
 }
-.hidden-buttons{
+.hidden-buttons > button{
   visibility: hidden;
 }
 .sideFrame{
@@ -105,7 +105,8 @@ sidebarMerged{
   outline: none;
   border-right: 1px solid #DA6E67;
   border-bottom: 1px solid #DA6E67;
-
+  font-size: 20px;
+  font-weight: 500;
 }
 .mainFrame{
   position: absolute;
@@ -130,4 +131,81 @@ sidebarMerged{
   width: 10vw;
   z-index: 100;
   background: #73CCD9;
+}
+
+/** Accordian CSS */
+
+.articleList{
+  display: grid;
+  grid-template-columns: 1fr;
+
+}
+.articleList > li{
+  list-style-type: none;
+  border: 1px solid #555;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.article-grid{
+  display: grid;
+  align-items: center;
+  grid-template-columns: 9fr 1fr;
+  padding: 0 1rem;
+  transition: background 0.4s ease-in;
+}
+.artVisible{
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+.artInvisible{
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+.contentP{
+  background: #f1f1f1;
+  padding: 1rem;
+  width: 100%;
+  transition: visibiity 0.5s ease-in;
+  margin: 0;
+  
+}
+.accordianCont{
+  /* background: palegreen; */
+  min-height: 94vh;
+  padding: 2rem;
+  background: #FFF4E6;
+  border: 2px dotted #DA6E67;
+}
+.accordianCont > ul{
+  background: #FFF4E6;
+}
+.articleTitle{
+  padding: 1rem;
+  font-size: 28px;
+  font-weight: 600;
+}
+.green{
+  background:#B3DFAD;
+}
+.orange{
+  background:#FDD88C;
+}
+.articleBtn{
+  height: 40px;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  
+}
+
+.select:before{
+  content: "\25bc   ";
+  color: gray;
+}
+.deselect:before{
+  content: "\25b2    ";
+  color: gray;
 }
