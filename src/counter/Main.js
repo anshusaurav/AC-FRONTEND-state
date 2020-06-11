@@ -9,7 +9,17 @@ class Counter extends React.Component {
   }
 
   increment = () => {
-    this.setState(state => ({count: state.count + 1}))
+    // let tempState = {};
+    // if(this.state.count === 12)
+    //   tempState.count = 12;
+    // else
+    //   tempState.count = this.state.count+1;
+    // this.setState(tempState);
+    this.setState(state =>
+      state.count !== 12
+        ? {count: state.count + 1}
+        : {count: state.count},
+    )
   }
   decrement = () => {
     this.setState(state => ({count: state.count - 1}))
@@ -19,13 +29,20 @@ class Counter extends React.Component {
     this.setState(state => ({count: 0}))
   }
 
-  render () {
+  render ( ) {
     return (
       <>
-        <h1>{this.state.count}</h1>
-        <button onClick={this.increment}>Increment</button>
-        <button onClick={this.decrement}>Decrement</button>
-        <button onClick={this.reset}>Reset</button>
+        <div className='mainCont'>
+        <div className='contentCont'>
+        <h1 className='textCenter counter'>{this.state.count}</h1>
+        <div className='counterBtnCont'>
+          <button onClick={this.increment}>Increment</button>
+          <button onClick={this.decrement}>Decrement</button>
+          <button onClick={this.reset}>Reset</button>
+        </div>
+        <p></p>
+        </div>
+        </div>
       </>
     )
   }
